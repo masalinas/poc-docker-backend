@@ -68,27 +68,29 @@ understand how you can continue to add features to this application.
 
 [![LoopBack](<https://github.com/loopbackio/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png>)](http://loopback.io/)
 
-## Start service with mongodb
+## Start container services
 
-Create a network for container services
+We create a network with two services: mongodb and loopback backend service
+
+STEP01: Create a network for container services
 
 ```sh
 docker network create training
 ```
 
-Start mongo db without any account, expose default mongo port and connect to previous network
+STEP02: Start mongo db without any account, expose default mongo port and connect to previous network
 
 ```sh
 docker run --name trainingdb -d -p 27017:27017 --network training mongo
 ```
 
-Build loopback backend image
+STEP03: Build loopback backend image
 
 ```sh
 docker build -t poc-docker-backend .
 ```
 
-Start loopback backend container service
+STEP04: Start loopback backend container service
 
 ```sh
 docker run --name poc-docker-backend
