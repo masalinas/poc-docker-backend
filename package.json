@@ -1,5 +1,5 @@
 {
-  "name": "poc-training-docker-backend",
+  "name": "poc-training-docker-nodejs-backend",
   "version": "0.0.1",
   "description": "PoC Training Loopback 4 Mongodb Backend",
   "keywords": [
