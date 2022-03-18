@@ -72,25 +72,25 @@ understand how you can continue to add features to this application.
 
 We create a network with two services: mongodb and loopback backend service
 
-STEP01: Create a network for container services
+**STEP01**: Create a network for container services
 
 ```sh
 docker network create training
 ```
 
-STEP02: Start mongo db without any account, expose default mongo port and connect to previous network
+**STEP02**: Start mongo db without any account, expose default mongo port and connect to previous network
 
 ```sh
 docker run --name trainingdb -d -p 27017:27017 --network training mongo
 ```
 
-STEP03: Build loopback backend image
+**STEP03**: Build loopback backend image
 
 ```sh
 docker build -t poc-docker-backend .
 ```
 
-STEP04: Start loopback backend container service
+**STEP04**: Start loopback backend container service
 
 ```sh
 docker run --name poc-docker-backend
