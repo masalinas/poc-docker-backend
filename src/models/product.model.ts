@@ -16,15 +16,15 @@ export class Product extends Entity {
   name: string;
 
   @property({
+    type: 'string',
+  })
+  description?: string;
+
+  @property({
     type: 'number',
     required: true,
   })
   price: number;
-
-  @property({
-    type: 'string',
-  })
-  description?: string;
 
   @property({
     type: 'boolean',
