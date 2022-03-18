@@ -93,5 +93,5 @@ docker build -t poc-docker-backend .
 **STEP04**: Start loopback backend container service
 
 ```sh
-docker run --name poc-docker-backend
+docker run --name poc-docker-backend -d -p 3000:3000 --network training poc-docker-backend
 ```
