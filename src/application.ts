@@ -1,12 +1,13 @@
 import {BootMixin} from '@loopback/boot';
 import {ApplicationConfig} from '@loopback/core';
-import {
-  RestExplorerBindings,
-  RestExplorerComponent,
-} from '@loopback/rest-explorer';
 import {RepositoryMixin} from '@loopback/repository';
 import {RestApplication} from '@loopback/rest';
+import {
+  RestExplorerBindings,
+  RestExplorerComponent
+} from '@loopback/rest-explorer';
 import {ServiceMixin} from '@loopback/service-proxy';
+import dotenv from 'dotenv';
 import path from 'path';
 import {MySequence} from './sequence';
 
@@ -17,6 +18,18 @@ export class Application extends BootMixin(
 ) {
   constructor(options: ApplicationConfig = {}) {
     super(options);
+
+    // define environemtn variables
+    if (process.env.NODE_ENV == 'docker')
+      dotenv.config({path: '.env.docker'});
+    else
+      dotenv.config({path: '.env'});
+
+    if (process.env.DB_USER == null)
+      process.env.DB_USER = '';
+
+    if (process.env.DB_PASSWORD == null)
+      process.env.DB_PASSWORD = '';
 
     // Set up the custom sequence
     this.sequence(MySequence);

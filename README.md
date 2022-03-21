@@ -92,6 +92,14 @@ docker build -t poc-docker-nodejs-backend .
 
 **STEP04**: Start loopback backend container service
 
+Start from host the default profile
+
 ```sh
 docker run --name poc-docker-nodejs-backend -d -p 3000:3000 --network training poc-docker-nodejs-backend
+```
+
+Start from host the docker profile
+
+```sh
+docker run --name poc-docker-nodejs-backend -d -e "NODE_ENV=docker" -p 3000:3000 --network training poc-docker-nodejs-backend
 ```
