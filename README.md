@@ -120,7 +120,6 @@ docker run --name poc-docker-nodejs-backend -d -e "NODE_ENV=docker" -p 3000:3000
 
 Access API service
 
-
 ```sh
 http://localhost:3000/api/products
 ```
