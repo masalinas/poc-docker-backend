@@ -110,7 +110,7 @@ Access API service
 http://localhost:3000/api/products
 ```
 
-## Start container from Docker
+## Start service from Docker
 
 Start service from docker
 
